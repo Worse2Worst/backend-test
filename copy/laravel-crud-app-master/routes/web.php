@@ -10,14 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/', 'LibController');
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/create', function () {
-    return view('create');
-});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+route::resource('biodata','BiodataController');
